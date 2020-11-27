@@ -8,7 +8,7 @@ $(function () {
             // 清空本地
             localStorage.removeItem("token")
             // 跳转页面
-            location.href="/login.html"
+            location.href = "/login.html"
             // 关闭询问框
             layer.close(index);
         });
@@ -41,7 +41,8 @@ function renderAvatar(user) {
     // 渲染头像
     if (user.user_pic !== null) {
         // 有头像
-        $(".layui-nav-img").show()
+        // console.log(user.user_pic);
+        $(".layui-nav-img").show().attr("src", user.user_pic)
         $(".text-avatar").hide()
     } else {
         // 没有头像
